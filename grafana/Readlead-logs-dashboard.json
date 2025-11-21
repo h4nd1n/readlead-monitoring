@@ -43,7 +43,7 @@
         "enableLogDetails": true,
         "showControls": false,
         "showTime": false,
-        "sortOrder": "Descending",
+        "sortOrder": "Ascending",
         "wrapLogMessage": false
       },
       "pluginVersion": "12.3.0",
@@ -53,9 +53,9 @@
             "type": "loki",
             "uid": "P8E80F9AEF21F6940"
           },
-          "direction": "backward",
+          "direction": "forward",
           "editorMode": "code",
-          "expr": "{project_name=\"readlead-frontend-dev\"} | json | line_format \"{{ .log }}\"",
+          "expr": "{project_name=\"readlead-frontend-dev\"} | json | line_format \"{{ .time }} | {{ .log }}\"",
           "queryType": "range",
           "refId": "A"
         }
@@ -85,7 +85,7 @@
         "enableLogDetails": true,
         "showControls": false,
         "showTime": false,
-        "sortOrder": "Descending",
+        "sortOrder": "Ascending",
         "wrapLogMessage": false
       },
       "pluginVersion": "12.3.0",
@@ -95,9 +95,9 @@
             "type": "loki",
             "uid": "P8E80F9AEF21F6940"
           },
-          "direction": "backward",
+          "direction": "forward",
           "editorMode": "code",
-          "expr": "{project_name=\"readlead-backend-dev\"} | json | line_format \"{{ .log }}\"",
+          "expr": "{project_name=\"readlead-backend-dev\"} | json | line_format \"{{ .time }} | {{ .log }}\"",
           "queryType": "range",
           "refId": "A"
         }
@@ -113,12 +113,12 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Readlead logs",
   "uid": "adw5n24",
-  "version": 7
+  "version": 11
 }
